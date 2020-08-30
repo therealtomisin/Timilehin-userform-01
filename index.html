@@ -8,30 +8,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <section class="user">
+        <h2>Users</h2>
+    </section>
     <div class="login-box">
-        <h2>Login</h2>
-        <form id="form-login"> 
-            <div class="user-box">
-                <input type="email" name="" required="" class="email">
+            <h2>Login</h2>
+            <form id="theForm">
+              <div class="user-box"> 
+                <input type="email" name="email" required="" class="email">
                 <label>Email</label>
-            </div>
-          <div class="user-box">
-            <input type="text" name="" required="" class="username">
-            <label>Username</label>
+              </div>
+              <div class="user-box">
+                <input type="text" name="username" required="" class="username">
+                <label>Username</label>
+              </div>
+              <div class="user-box">
+                <input type="password" name="password" required="" class="password">
+                <label>Password</label>
+              </div>
+              <a href="#" class="button">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Submit
+              </a>
+            </form>
           </div>
-          <div class="user-box">
-            <input type="password" name="" required="" class="password">
-            <label>Password</label>
-          </div>
-          <a href="#" class="button">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Submit
-          </a>
-        </form>
-      </div>
       <script src="javascript.js"></script>
 </body>
 </html>

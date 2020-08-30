@@ -1,27 +1,74 @@
-let inputs = document.querySelectorAll("input")
+const inputs = document.querySelectorAll('input')
+    const regexValues = {
+    email: /^([a-z\d\.-]+)@([a-z]+)\.([a-z]{2,5})(\.[a-z]{2,5})?$/i,       
+    username: /^[a-z\d]{5,12}$/i,
+    password: /^[\w@-]{8,20}$/i
+}
+
+validate = (field, regex) => {
+    if(regex.test(field.value)){
+        field.className = 'valid'
+        console.log(regex.test(field.value))
+    } else{
+        field.className = 'invalid'
+    }
+}
+const submit = document.querySelector('.button')
+inputs.forEach((input)=>{
+    input.addEventListener('keyup', (e)=>{
+       // console.log(e.target.attributes.name.value)
+       validate(e.target, regexValues[e.target.attributes.name.value])
+    })
+})
+submit.addEventListener('click', (e)=>{
+    let userSection = document.querySelector('.user')
+    let theDiv = document.createElement('div');
+    let theList =  document.createElement('ul');
+
+    userSection.appendChild(theDiv)
+    theDiv.appendChild(theList)
+   
+            inputs.forEach((input)=>{
+                if (input.className = 'valid'){
+                    let listElement = document.createElement('li');
+                    theList.appendChild(listElement)
+                    listElement.textContent = input.value;
+
+                    // form.querySelector('.userbox .email').value = ''
+                    // form.querySelector('.userbox .username').value = ''
+                    // form.querySelector('.userbox .password').value = ''
+                }
+            })
+        })
+
+
+
+
+
+/* let inputs = document.querySelectorAll("#input")
 
 let regexValues = {
     email: /^([a-z\d\.-]+)@([a-z]+)\.([a-z]{2,5})(\.[a-z]{2,5})?$/ig,
-    username: /^[a-z0-9]{5,20}$/gi,
+    username: /^[a-z0-9]{5,20}$/ig,
     password: /^[a-z0-9]{6,12}$/gi
 }
 
-    validateRegex=(field, value)=>{
-        if (field.value = value){
-            class user  {
-                constructor(theEmail, theusername, thepassword){
-                    this.email = theEmail;
-                    this.username = theusername;
-                    this.password = thepassword;
-                    }
-                 }
-                 let user1 = new user(email, username, password)
-                 console.log(user1)
+    function validateRegex(field, regex){
+        if (regex.test(field.value)){
+            
+            field.className = 'valid' 
         }
         else{
-            return console.error('invalid username or password');
+            field.className = 'invalid'
         }
     }
+
+    inputs.forEach((input)=>{
+        input.addEventListener('keyup', (e)=>{
+            //console.log(e.target.className)
+           validateRegex(e.target, regexValues[e.target.attributes.name.value])
+        })
+    }) */
 
     //     if (emailRegex.test(email) && usernameRegex.test(username)){
     //         if (username.length < 20 && passwordRegex.test(password)){
@@ -29,12 +76,10 @@ let regexValues = {
     //         }
     //     }
     //             else {
-    //                 
+    //                 return console.error('invalid username or password');
                     
     //     }
-    //     form.querySelector('.email').value = ''
-    //     form.querySelector('.username').value = ''
-    //     form.querySelector('.password').value = ''
+    //     
     // })
 
 

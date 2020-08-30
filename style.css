@@ -7,14 +7,30 @@ html {
     font-family: sans-serif;
     background: linear-gradient(#141e30, #243b55);
   }
-  
+  section{
+    background: rgba(0,0,0,.5);
+    width: 400px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    position: relative;
+  }
+  section h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  li{
+      list-style-type: none;
+      color: #fff;
+  }
   .login-box {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    /* top: 50%;
+    left: 50%; */
     width: 400px;
     padding: 40px;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     background: rgba(0,0,0,.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
